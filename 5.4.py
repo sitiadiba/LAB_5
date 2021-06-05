@@ -4,7 +4,7 @@ import sys
 if (len(sys.argv) > 1):
     ServerIp = sys.argv[1]
 else:
-    print("\nRun like \n python3 store.py < server ip address > \n\n")
+    print("\nRun like \n python3 5.2.b.py < server ip address > \n\n")
     exit(1)
 
 
