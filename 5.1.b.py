@@ -1,22 +1,15 @@
 import socket
 
 s = socket.socket()
-print("Berjaya buat sokett")
 
 port = 8888
 
-s.bind(('', port))
-print("Berjaya bind soket di port: " + str(port))
+s.connect(('192.168.56.106', port))
 
-s.listen(5)
-print("soket tengah menunggu client!")
+data = s.recv(1024)
 
-while True:
-        c, addr = s.accept()
-        print("Dapat capaian dari: " + str(addr))
+s.send(b'Hi, saya client. Terima Kasih!');
 
-        c.send(b'Terima Kasih!')
-        buffer = c.recv(1024)
-        print(buffer)
-c.close()
+print (data)
 
+s.close()
